@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: Overpass Mono;
+    background-color: #729DAA;
+    
+    color: #232729;
+}
+h3 {
+    font-size: 40px;
+}
+header {
+    position: absolute;
+    right:0;
+    top:0;
+    
+    display: flex;
+}
+a {
+    margin-right: 16px;
+    text-decoration: none;
+    
+}
+header button {
+    font-size: 14px;
+}
+
+.half{
+    width:50%;
+    margin: 3%;
+}
+.white-block {
+    background-color: #F2F2F2;
+    padding: 5%;
+    border-radius: 40px;
+    box-shadow: #333 3px 3px 8px;
+}
+
+
+
+input, label, button {
+    display: block;
+   margin-top: 8px;
+}
+
+select {
+    background-color: #F2F2F2 ;
+    border: solid black 3px;
+    border-radius: 20px;
+    padding: 4px;
+    font-size: 18px;
+    font-family: Overpass Mono;
+}
+
+.mind {
+   width:300px;
+   height: 200px;
+    background-color: #F2F2F2;
+   border: black solid 3px;
+   border-radius: 30px;
+   padding: 12px;
+}
+
+.circle{
+    background-color: #aaa;
+    border-radius: 50%;
+    width:60px;
+    height:60px;
+    margin-right:12px;
+}
+
+.week-circles{
+    display:flex;
+}
+
+button {
+    background-color: #82CEC2;
+    color: #232729;
+    border-radius:20px;
+    border:solid 3px #232729;
+    padding:8px 12px;
+    font-family: Overpass Mono;
+    font-size:20px;
+}
+.container {
+    display: flex;
+}

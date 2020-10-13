@@ -1,0 +1,21 @@
+{
+  "name": "data.selfie.app",
+  "version": "1.0.0",
+  "description": "The data selfie app by Jason Lee",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "data",
+    "selfie"
+  ],
+  "author": "Annie Bartholomew",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {}
+}

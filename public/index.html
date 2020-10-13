@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    </head>
+    <body>
+        <header> <a href="#"><button>log in</button></a><a href="#"><button>sign up</button></a></header>
+        <div class="container">
+        <div class="half">
+            <h3> Today is <span id="date">...</span></h3>
+            <div class="white-block">
+                <h3> Last week:</h3>
+                <div class="week-circles">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+            </div>
+            </div>
+
+        </div>
+        <div class="half">
+            
+            <div class="white-block">
+                <h3>today:</h3>
+                <div class="inputs">
+                <label for="color">what color fits your mood today?</label>
+                <input name="color" type="color">
+                <label for="feeling">how are you feeling?</label>
+                <select name="feeling">
+                    <option>happy</option>
+                    <option>sad</option>
+                    <option>confused</option>
+                    <option>tired</option>
+                    <option>anxious</option>
+                    <option>angry</option>
+                    <option>reflective</option>
+                    <option>depressed</option>
+                </select>
+                <label for="mind">what is on your mind?</label>
+                <textarea name="mind" class="mind"></textarea>
+                <button>submit</button>
+            </div>
+             </div>
+        </div>
+    </div>
+       
+        <script>
+            
+            const button = document.querySelector("button");
+            let date =  new Date();
+                date = date.toDateString();
+            document.querySelector('#date').textContent = date
+            
+
+            button.addEventListener("click", async function(){
+                let colorChoice = document.querySelector("input").value;
+                let feeling = document.querySelector("select").value;
+               let onMind = document.querySelector(".mind").value;
+             
+                const data = {colorChoice, feeling, onMind};
+                const options = { 
+                    method: 'POST',
+                    headers: {'Content-Type':'application/json'},
+                    body: JSON.stringify(data)
+
+                }
+                const response = await fetch('/api', options);
+                const json = await response.json();
+                console.log(json)
+
+
+
+                colorChoice = "#000";
+                feeling = "";
+                onMind = "";
+                    } )  
+                    
+                            
+                
+                    
+                
+      
+
+        
+    
+</script>
+  
+        
+        
+</body>
+</html>
